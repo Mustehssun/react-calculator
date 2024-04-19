@@ -78,26 +78,38 @@ export default function Calculator() {
             setScreenText(SYNTAX_ERROR);
         }
         else if(calculatorState() == states.accumulatingOperand2) {
-            operand1 = calculate();
-            setOperand1(operand1);
+            const result = calculate();
+            setOperand1(result);
 
-            console.log(operand1);
+            console.log(result);
             
             setOperand2(0);
-            setScreenText(operand1);
+            setScreenText(result);
+            
             calculatorState = transition(calculatorState, actions.operator);
             setCalculatorState(() => calculatorState);
         }
     }
 
     const handleOperator = operatorText => {
-        operator = operatorText;
-        setOperator(operator);
+        if(calculatorState() == states.accumulatingOperand1) {
+            operator = operatorText;
+            setOperator(operator);
 
-        calculatorState = transition(calculatorState, actions.operator);
-        setCalculatorState(() => calculatorState);
+            calculatorState = transition(calculatorState, actions.operator);
+            setCalculatorState(() => calculatorState);
 
-        setScreenText(operand2);
+            setScreenText(operand2);
+        }
+        else if(calculatorState() == states.accumulatingOperand2) {
+            handleEquals();
+            
+            operator = operatorText;
+            setOperator(operator);
+
+            calculatorState = transition(calculatorState, actions.operator);
+            setCalculatorState(() => calculatorState);
+        }
     }
 
     const isOp = text => ["+", "-", "*", "/"].includes(text);
@@ -130,7 +142,6 @@ export default function Calculator() {
         div: {
             border: "6px solid black",
             padding: "5px",
-            backgroundColor: "green",
             width: "250px",
             marginRight: "auto",
             marginLeft: "auto",

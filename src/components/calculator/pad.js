@@ -1,15 +1,8 @@
+import { serialSequenceGenerator } from "mustehssun-key-generator";
 import { mapNthElement, reverseRange } from "../../utils/listUtils";
 
 export default function Pad(props) {
-    const keyGenerator = (prefix) => {
-        let key = 0;
-        if(prefix == null) {
-            prefix = "";
-        }
-        return () => "" + prefix + ++key;
-    };
-
-    const generateKey = keyGenerator("span");
+    const generateKey = serialSequenceGenerator("span");
 
     const styles = {
         outerPad: {

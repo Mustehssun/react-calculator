@@ -7,7 +7,6 @@ export default function Screen(props) {
         div: {
             border: "3px solid black",
             padding: "5px",
-            backgroundColor: "green",
             width: "200px",
             margin: "18px",
             marginRight: "auto",
@@ -15,8 +14,6 @@ export default function Screen(props) {
             backgroundColor: "white"
         },
         input: {
-            backgroundColor: "green",
-            color: "white",
             width: "200px",
             border: "none",
             backgroundColor: "white",
