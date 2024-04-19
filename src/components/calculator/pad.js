@@ -6,19 +6,22 @@ export default function Pad(props) {
 
     const styles = {
         outerPad: {
-            border: "3px solid black",
+            border: "3px solid #2f0404",
+            borderRadius: "3%",
             margin: "5px",
             padding: "5px",
             width: "200px",
             marginLeft: "auto",
             marginRight: "auto",
-            backgroundColor: "#3f4c3f"
+            backgroundColor: "rgb(50 28 28)",
+            boxShadow: "1px 2px"
         },
         button: {
+            borderRadius: "50%",
             margin: "10px",
             width: "40px",
             height: "40px",
-            backgroundColor: "#454b45",
+            backgroundColor: "rgb(164 26 26)",
             color: "white",
             fontSize: "20px"
         }

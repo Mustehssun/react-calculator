@@ -5,19 +5,20 @@ export default function Screen(props) {
 
     const styles = {
         div: {
-            border: "3px solid black",
+            border: "3px solid #093f01",
+            borderRadius: "7%",
             padding: "5px",
             width: "200px",
             margin: "18px",
             marginRight: "auto",
             marginLeft: "auto",
-            backgroundColor: "white"
+            backgroundColor: "black"
         },
         input: {
             width: "200px",
             border: "none",
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: "black",
+            color: "#15c115",
             fontSize: "20px",
             fontWeight: "bold"
         }

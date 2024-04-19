@@ -140,12 +140,13 @@ export default function Calculator() {
 
     const styles = {
         div: {
-            border: "6px solid black",
-            padding: "5px",
+            border: "6px solid #2e5582",
+            borderRadius: "13%",
+            padding: "40px",
             width: "250px",
             marginRight: "auto",
             marginLeft: "auto",
-            backgroundColor: "#454b45"
+            backgroundColor: "rgb(50 49 75)"
         }
     };
 
@@ -156,3 +157,5 @@ export default function Calculator() {
         </div>
     );
 }
+//outer border => 6px solid #2e5582
+//outer => rgb(50 49 75)
